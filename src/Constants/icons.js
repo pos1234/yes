@@ -9,6 +9,24 @@ import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import CallIcon from '@mui/icons-material/Call';
 import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
+import SearchIcon from '@mui/icons-material/Search';
+import FavoriteIcon from '@mui/icons-material/Favorite';
+import ShareIcon from '@mui/icons-material/Share';
+export const Share= ()=> {
+  return (
+    <ShareIcon/>
+  )
+}
+export const Heart= ()=> {
+  return (
+    <FavoriteIcon/>
+  )
+}
+export const Search= ()=> {
+  return (
+    <SearchIcon/>
+  )
+}
 export const ArrowDown= ()=> {
   return (
     <ArrowDownwardIcon/>

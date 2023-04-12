@@ -1,7 +1,6 @@
 import React from "react"
-import { useState } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css'
-import {Container,Row,Col,Button} from 'react-bootstrap'
+import {Container,Row,Col} from 'react-bootstrap'
 import { Facebook,Twitter,Linked,Email,Location,Call } from "../Constants/icons"
 const Footer = () =>{
     return(
@@ -54,10 +53,5 @@ const Footer = () =>{
         </Container>
         </div>
     )
-}
-const open = ()=>{
-    const TheParagraph = document.getElementsByClassName('view-paragraph');
-    TheParagraph.classList.toggle('showtext');
-    console.log(TheParagraph);
 }
 export default Footer

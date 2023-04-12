@@ -1,8 +1,7 @@
 import React from "react"
 import 'bootstrap/dist/css/bootstrap.min.css'
 import {Container,Row,Col,Button} from 'react-bootstrap'
-import { Facebook,Twitter,Linked,Email,Star,Business,ArrowDown} from '../Constants/icons'
-
+import {ArrowDown} from '../Constants/icons'
 import Footer from './Footer'
 import Navigation from './Navigation'
 import ToggledContent from "./ToggledContent"
@@ -26,7 +25,7 @@ const Boxes = (props)=>{
     return(
         <Col className="Boxes">
             <h1>{props.title}</h1>
-            <img src={props.imageSrc} />
+            <img src={props.imageSrc} alt="image-for-boxes" />
         </Col>
     )
 }
@@ -50,7 +49,7 @@ const About = () =>{
         <Container className="about-deliver">
             <Row className="about-deliver-content">
                 <Col>
-                <Button as='a' className='about-deliver-button' href=''>EMPLOYERS</Button>
+                <Button as='a' className='about-deliver-button' name="about-deliver-link-button" href=''>EMPLOYERS</Button>
                 <h1 className="about-headings">Delivering YES Moments</h1>
                 <h5>Bridging the Gap Between Employers & Job Seekers For High-Impact Business Outcomes</h5>
                 <p>YES | Your Employment Solutions is a robust and knowledgeable HR services company in Ethiopia specializing in employee recruitment, outsourcing, payroll management, and training.</p>
@@ -60,7 +59,7 @@ const About = () =>{
             </Row>
             <Row className='about-deliver-boxes'>
                 <Col sm={1}>
-                    <img src={icon_image7}/>
+                    <img src={icon_image7} alt="mission-icon"/>
                 </Col>
                 <Col className="about-deliver-boxes-content">
                     <h1>Mission</h1>
@@ -69,7 +68,7 @@ const About = () =>{
             </Row>
             <Row className='about-deliver-boxes'>
                 <Col sm={1}>
-                    <img src={icon_image8}/>
+                    <img src={icon_image8} alt="vision-icon"/>
                 </Col>
                 <Col className="about-deliver-boxes-content">
                     <h1>Vision</h1>
@@ -103,7 +102,7 @@ const About = () =>{
     <Container className="about-services">
         <Row>
             <Col>
-            <Button as='a' className='about-deliver-button' href=''>Services</Button>
+            <Button as='a' className='about-deliver-button' href='' name="about-deliver-button-link">Services</Button>
                 <h1  className="about-headings">YES, We Do That.</h1>
                 <p>Everyone has potential waiting to be released. Your business has the potential to grow, and your career has the potential to find success. We are here to help you explore your potential and uncover which way to go next.</p>    
                 <p>By bridging the gap between employers and job seekers, we are filling a need for businesses in Ethiopia. You are much too busy growing to be bogged down with HR tasks. So, we are here to assist you with that in any way we can.</p>    
@@ -152,10 +151,10 @@ const About = () =>{
                             </ul>
                     </Col>
                 </Row>
-                <a>-Learn More</a>
+                <a href="" name='learn-more-link'>-Learn More</a>
             </Col>
             <Col>
-            <img src={image2}/> 
+            <img src={image2} alt="people discussing"/> 
             </Col>
         </Row>
     </Container>
@@ -163,7 +162,7 @@ const About = () =>{
         
         <Row>
             <Col>
-                <img src={image3}/> 
+                <img src={image3} alt="people discussing on a table"/> 
             </Col>
             <Col sm={6} className="about-common-style-right">
                 <h1  className="about-headings">HR Outsourcing | Payroll Management</h1>
@@ -181,7 +180,7 @@ const About = () =>{
                         </ul>
                     </Col>
                 </Row>
-                <a>-Learn More</a>
+                <a href="" name='learn-more-link-text'>-Learn More</a>
             </Col>
            
         </Row>
@@ -189,14 +188,14 @@ const About = () =>{
     <Container className="about-common-style">
         <Row>
         <Col>
-            <img src={image4}/> 
+            <img src={image4} alt="people chatting"/> 
             </Col>
             <Col sm={6} className="about-common-style-right">
                 <h1  className="about-headings">Executive Search</h1>
                 <p>
                 Get the best leader for your organisation with YES' executive search services. YES provides comprehensive executive search services, bringing the right leaders to your organisation and making sure each one fits perfectly with its culture. Our expert team leverages their knowledgeable skill-set to identify and deliver candidates who match organisational culture, promising a positive leadership outcome that will take you into a brighter tomorrow!
                 </p>
-                <a>-Learn More</a>
+                <a href="" name='learn-more-link'>-Learn More</a>
             </Col>
            
         </Row>
@@ -210,14 +209,14 @@ const About = () =>{
                 <a>-Learn More</a>
             </Col>
             <Col>
-            <img src={image5}/> 
+            <img src={image5} alt="people chatting on a table"/> 
             </Col>
         </Row>
     </Container>
     <Container className="about-common-style">
         <Row>
         <Col>
-            <img src={image6}/> 
+            <img src={image6} alt="people argueing"/> 
             </Col>
             <Col sm={6} className="about-common-style-right">
                 <h1  className="about-headings">Assessment and Background Check</h1>
@@ -245,7 +244,7 @@ const About = () =>{
                         </ul>
                     </Col>
                 </Row>
-                <a>-Learn More</a>
+                <a href="" name='learn-more-link-middle'>-Learn More</a>
             </Col>
           
         </Row>
@@ -276,10 +275,10 @@ Here is a list of fields where we can provide additional training and developmen
                         </ul>
                     </Col>
                 </Row>
-                <a>-Learn More</a>
+                <a href="" name='learn-more-link-point'>-Learn More</a>
             </Col>
             <Col>
-            <img src={image7}/> 
+            <img src={image7} href="" alt='developer discussing'/> 
             </Col>
         </Row>
     </Container>

@@ -1,12 +1,12 @@
 import React from 'react'
 import logo from '../images/yes-logo.svg'
-import {Row, Col, Navbar, Nav, Button, Container,Offcanvas,Carousel} from 'react-bootstrap'
+import {Row, Col, Navbar, Nav, Button, Container,Offcanvas} from 'react-bootstrap'
 import { Facebook,Twitter,Linked,Email} from '../Constants/icons'
 export default function Navigation() {
   return (
     <Navbar key='expand' bg='' expand='expand' className='navigation'>
     <Container >
-         <Navbar.Brand href="home"  className='logo-image'><img src={logo}/></Navbar.Brand>
+         <Navbar.Brand href="home" name="home" className='logo-image'><img src={logo} alt='brand-logo'/></Navbar.Brand>
          <Navbar.Toggle className='toggle-button' aria-controls={`offcanvasNavbarLabel-expand-${'expand'}`} >
               <span className='navbar-toggler-icon-first'></span>
               <span className='navbar-toggler-icon-second'></span>
@@ -17,13 +17,12 @@ export default function Navigation() {
          placement="end">
          <Offcanvas.Header closeButton >
          <Offcanvas.Title id={`offcanvasNavbarLabel-expand-${'expand'}`}>
-                 <img src={logo} className='logo-navbar'/>
+                 <img src={logo} alt='brand-logo-navbar' className='logo-navbar'/>
              </Offcanvas.Title>
          </Offcanvas.Header> 
          <Offcanvas.Body>
          <Nav className="justify-content-end flex-grow-1 pe-3 navbar-navs">
          <Nav.Link href="#action1">About</Nav.Link>
-         
          <Nav.Link href="#action2">Client</Nav.Link>   
          <Nav.Link href="#action2">Find A Job</Nav.Link>   
          <Nav.Link href="#action2">Products</Nav.Link>   
