@@ -19,12 +19,12 @@ const YourHr = (props)=>{
     return(
             <Row className='home-your-hr-lists'>
                 <Col className='icon-image-container'>
-                    <img alt='icon-image' src={props.imageSrc}/>
+                    <img alt='icon-image' src={props.imageSrc} width={40}/>
                 </Col>
                 <Col xm={6} className='home-hr-texts'>
                     <h5>{props.title}</h5>
                     <p>{props.content}</p>
-                    <Button className='list-button' as='a' name='button-down-home' href={props.href}><ArrowRight/></Button>
+                    <Button role='link' aria-label='your HR is good' className='list-button' as='a' name='button-down-home' href={props.href}><ArrowRight/></Button>
                 </Col>
             </Row>
     )
@@ -33,7 +33,7 @@ const HowHelp = (props)=>{
     return(
         <Row className='how-we-help-rows'>
             <Col className='how-we-help-image'>
-                <img src={props.imageSrc} alt='how-we-help-image'/>
+                <img src={props.imageSrc} alt='how-we-help-image' width={35}/>
             </Col>
             <Col xs={11} >
                 <h5>{props.title}</h5>
@@ -45,10 +45,10 @@ const HowHelp = (props)=>{
 const Seeker = (props)=>{
     return (
         <Col className='home-seeker-lists'>
-            <img src={props.imageSrc} alt='home-seeker-image' />
+            <img src={props.imageSrc} alt='home-seeker-image' width={80}/>
             <h3>{props.title}</h3>
             <p>{props.content}</p>
-            <Button className='list-button' as='a' href={props.href} name='link-button' ><ArrowRight/></Button>
+            <Button role='link' aria-label='links' className='list-button' as='a' href={props.href} name='link-button' ><ArrowRight/></Button>
         </Col>
     )
 }
@@ -133,7 +133,7 @@ const Home = ()=>{
                             </div>
                         </Col>
                         <Col className='home-your-hr-side-image' sm={12} lg={6}>
-                            <img src={image1} alt='home-side-image'/>
+                            <img src={image1} alt='home-side-image' width={440}/>
                         </Col>
                     </Row>
                 </Container>
@@ -226,7 +226,7 @@ const Home = ()=>{
                             <Button className='home-last-content-button' as='a' href='' name='home-last-content-start-button'>Start Now</Button>
                         </Col>
                         <Col>
-                        <img src={image2} alt='last-content-image' />
+                        <img src={image2} alt='last-content-image'/>
                         </Col>
                     </Row>
                 </Container>

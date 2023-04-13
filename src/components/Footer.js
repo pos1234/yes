@@ -5,11 +5,13 @@ import { Facebook,Twitter,Linked,Email,Location,Call } from "../Constants/icons"
 const Footer = () =>{
     return(
         <div>
-            <Container fluid>
-            <Row className="footer-contact" xs="auto">
-                <Col >
+            <Container className="footer-container" fluid>
+            <div className="footer-background-overlay"></div>
+            <div className="footer-inner-content">
+            <Row className="footer-contact" >
+                              <Col >
                     <h1>Get <span className='underlined underline-clip'>in</span> touch</h1>
-                    <span ><Location className="footer-contact-icons"/></span><p>Suite 301E | Bethlehem Plaza, Megenagna, Addis Ababa, Ethiopia</p>
+                    <p><span className="footer-contact-icons"><Location /></span>Suite 301E | Bethlehem Plaza, Megenagna, Addis Ababa, Ethiopia</p>
                     <p><span className="footer-contact-icons"><Call/></span> +2519 42 07 07 07 | +2511 16 67 47 67</p>
                     <p><span className="footer-contact-icons"><Email/></span> info@yes.et | jobs@yes.et | employ@yes.et |</p>
                 </Col>
@@ -23,8 +25,8 @@ const Footer = () =>{
                             <p>Upload Resume</p>
                             <p>My YES</p>
                         </Col>
-                        <Col >
-                        <h3 className="footer-contact-h3">Fot Job Seekers</h3>
+                        <Col className="footer-contact-yes-col">
+                        <h3 className="footer-contact-h3">For Job Seekers</h3>
                         <p>Post Job</p>
                         <p>Submit Job Order</p>
                         <p>Our Services</p>
@@ -42,6 +44,7 @@ const Footer = () =>{
                     </Row>
                 </Col>
             </Row>
+            </div>
             <Row className="footer-contact-term" xs="auto">
                 <Col>
                     <p className="silver-paragraph">©2023 YES Your Employment Solution.</p>
@@ -50,6 +53,7 @@ const Footer = () =>{
                     <p className="silver-paragraph">Terms and Conditions | Privacy Policy</p>
                 </Col>
             </Row>
+            
         </Container>
         </div>
     )

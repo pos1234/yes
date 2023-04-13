@@ -15,7 +15,8 @@
   font-family: 'Rubik', sans-serif;
 }
 body{
-  overflow-x: hidden;
+  width: 100%;
+  overflow-x: hidden !important;
   scroll-behavior: smooth;
 }
 /* .underlined {
@@ -36,7 +37,6 @@ body{
 } */
 
 /*Home Page */
-
 .navbar-toggler-icon-first,
 .navbar-toggler-icon-second,
 .navbar-toggler-icon-third{
@@ -848,35 +848,67 @@ word-wrap: break-word !important; */
 
 
 /* Footer */
-.footer-contact{
+.footer-container{
   background:url('./images/image-1-1-1.webp');
   background-position-y: -175px;
-  padding:50px 8% 50px;
   color:var(--color-white);
-  background-color: #0452fc00;
-  opacity: 0.7;
+  position: relative;
+  z-index: -2;
+}
+.footer-container .footer-background-overlay{
+ background-color:var(--color-secondary);
+  opacity: 0.5;
+  z-index: 1;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  color:white;
+  position: absolute;
+  display: block; 
+  z-index: -1;
+}
+.footer-container .footer-contact{
+  padding:50px 0% 50px 8%;
+  color:var(--color-white);
+  position: relative;
+  z-index: 1;
+}
+.footer-contact .footer-inner-content{
+  z-index: 1;
 }
 .footer-contact-h3{
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   padding-bottom: 1.2rem;
   margin-top: 3.5rem;
+  width:150px;
+  font-weight: 600;
+}
+.footer-contact h1{
+  font-size: 3.5rem;
+  padding-bottom: 1.2rem;
+}
+.footer-contact .footer-contact-icons{
+  margin-right:1rem;
 }
 .footer-contact-yes{
-  padding-left: 200px;
+  padding-left: 0px;
+  margin-left: 5rem !important;
 }
 .footer-contact-yes-col{
-  margin-right: 4rem;
+  margin-right: 0rem;
+  margin-left: 0rem;
 }
 .footer-contact-yes p{
   line-height:0.7rem;
+  font-size: 0.9rem;
 }
 .footer-contact-yes ul{
   margin-top: 3.5rem;
-  margin-left: 5rem;
 }
 .footer-contact-yes ul li{
-  width:40px;
-  height:40px;
+  width:35px;
+  height:35px;
   text-align: center;
   padding:5px;
   background-color:var(--color-secondary);
@@ -887,6 +919,7 @@ word-wrap: break-word !important; */
 .footer-contact-term{
   text-align: center;
   padding:30px 30% 10px;
+  background-color: var(--color-white);
 }
 
 
@@ -896,8 +929,12 @@ word-wrap: break-word !important; */
 /* responsive */
 @media (max-width:576px){
   /* Navbar Responsive */
-  .navbar-toggler-icon{
-    
+  .home-container{
+    overflow-x: hidden;
+  }
+  body{
+    max-width: 100% !important;
+    overflow-x: hidden !important;
   }
   .logo-image img{
     width:150px;
@@ -911,6 +948,7 @@ word-wrap: break-word !important; */
     margin-top: 0px;
     margin-left: 40px;
   }
+
   .navigation .toggle-button{
     position: fixed;
     left:80%;
@@ -942,9 +980,7 @@ word-wrap: break-word !important; */
     top: -30px; 
   }
   /* Home responsive */
-  body{
-    overflow-x: hidden;
-  }
+  
   .home-entry{
     background: url('./images/yohannes-minas-YPLosSc3w6A-unsplash-min-scaled-1-1.webp') no-repeat;
     background-size:100%;
@@ -1200,9 +1236,7 @@ word-wrap: break-word !important; */
     height: 350px;
   }
 /* Find a Job responsive */
-.job-navigation{
 
-}
 .job-navigation .logo-navbar{
   width:100px;
   height:100px;
@@ -1252,9 +1286,7 @@ word-wrap: break-word !important; */
 .search-result-container .posted-content{
   font-size: 0.7rem;
 }
-.search-result-container .posted-content image{
-  
-}
+
 .search-result-container .button{
   background-color: var(--color-primary);
   border:none;
@@ -1270,14 +1302,26 @@ word-wrap: break-word !important; */
 
   /* footer responsive */
   .footer-contact{
-    padding-left: 4%;
-  }
+    padding:0;
+    padding-left: 0%;
+    width: 100%;
+  } 
   .footer-contact-yes{
-    padding-left:unset;
+    margin-left: unset !important;
+    padding-left: 0px !important;
+  }
+  .footer-contact-yes-col{
+    margin-right: 0rem;
+    margin-left: 0rem;
+    width: 50% !important;
+    margin-right:unset;
   }
   .footer-contact-term{
     padding:30px 15% 0px;
     text-align: center;
+  }
+  .footer-contact .footer-contact-icons{
+    margin-right:0rem;
   }
   .footer-contact-term p{
     text-align: center;
@@ -1286,13 +1330,10 @@ word-wrap: break-word !important; */
   }
   .footer-contact-yes ul {
     width:100%;
-    margin-left: 2rem;
+    padding:0;
   }
   .footer-contact-yes ul li{
     display: inline;
     margin-right: 2rem;
-  }
-  .footer-contact-yes-col{
-    margin-right:unset;
   }
 }

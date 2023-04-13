@@ -7,7 +7,7 @@ import FindJob from './components/FindJob';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <FindJob />
+    <Home/>
   </React.StrictMode>
 );
 

@@ -15,7 +15,7 @@ export default function Navigation() {
          <Navbar.Offcanvas className='offcanvas-navbar' id={`offcanvasNavbar-expand-${'expand'}`}
          aria-labelledby={`offcanvasNavbarLabel-expand-${'expand'}`}
          placement="end">
-         <Offcanvas.Header closeButton >
+         <Offcanvas.Header closeButton  className='closeButton'>
          <Offcanvas.Title id={`offcanvasNavbarLabel-expand-${'expand'}`}>
                  <img src={logo} alt='brand-logo-navbar' className='logo-navbar'/>
              </Offcanvas.Title>
