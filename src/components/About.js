@@ -1,7 +1,6 @@
 import React from "react"
 import 'bootstrap/dist/css/bootstrap.min.css'
 import {Container,Row,Col,Button} from 'react-bootstrap'
-import {ArrowDown} from '../Constants/icons'
 import Footer from './Footer'
 import Navigation from './Navigation'
 import ToggledContent from "./ToggledContent"
@@ -21,6 +20,8 @@ import icon_image5 from '../images/icon-image-5.avif'
 import icon_image6 from '../images/icon-image-6.avif'
 import icon_image7 from '../images/icon-image-17.avif'
 import icon_image8 from '../images/icon-image-18.avif'
+import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
+import { Helmet } from "react-helmet-async"
 const Boxes = (props)=>{
     return(
         <Col className="Boxes">
@@ -32,15 +33,22 @@ const Boxes = (props)=>{
 
 const About = () =>{
     return(
+        <div>
+            <Helmet>
+                <title>About YES | Empowering Ethiopian Business & Job Seekers</title>
+                <meta name="description" content="Learn how YES has transformed the Ethiopian labor market by connecting business with top talent and providing innovative HR solutions for sustainable growth"/>
+            </Helmet>
        <div className="about-container">
-       
+        
        <div className='about-entry'>
                     <div className='about-entry-content'>
                      <Navigation/>
                         <Row className='about-entry-headings'>
                             <h1 className='display-1 styled-ur'>Your one-stop-shop for employment solutions in Ethiopia!</h1>
                             <Row className='about-icon-container'>
-                                <Col><span className="about-entry-icon"><h1><ArrowDown/></h1></span></Col>
+                                <Col><span className="about-entry-icon"><h1>
+                                    <ArrowDownwardIcon sx={{ fontSize: 50}}/>
+                                </h1></span></Col>
                             </Row>
                         </Row> 
                     </div>
@@ -51,7 +59,7 @@ const About = () =>{
                 <Col>
                 <Button as='a' className='about-deliver-button' name="about-deliver-link-button" href=''>EMPLOYERS</Button>
                 <h1 className="about-headings">Delivering YES Moments</h1>
-                <h5>Bridging the Gap Between Employers & Job Seekers For High-Impact Business Outcomes</h5>
+                <h2>Bridging the Gap Between Employers & Job Seekers For High-Impact Business Outcomes</h2>
                 <p>YES | Your Employment Solutions is a robust and knowledgeable HR services company in Ethiopia specializing in employee recruitment, outsourcing, payroll management, and training.</p>
                 <p>We work with our clients to deliver happy YES moments by leading them to successful new hires, simplifying their HR processes, and providing experienced and helpful HR support.</p>
                 <p>Since 2015, YES has provided local and international clients with the right people to fill their most needed professional roles at the right time. We can help you have that YES moment, too!</p>
@@ -151,7 +159,7 @@ const About = () =>{
                             </ul>
                     </Col>
                 </Row>
-                <a href="" name='learn-more-link'>-Learn More</a>
+                <a href="https://bright-centaur-bb0f69.netlify.app/" name='learn-more-link'>-Learn More</a>
             </Col>
             <Col>
             <img src={image2} alt="people discussing"/> 
@@ -180,7 +188,7 @@ const About = () =>{
                         </ul>
                     </Col>
                 </Row>
-                <a href="" name='learn-more-link-text'>-Learn More</a>
+                <a href="https://bright-centaur-bb0f69.netlify.app/" name='learn-more-link-text'>-Learn More</a>
             </Col>
            
         </Row>
@@ -195,7 +203,7 @@ const About = () =>{
                 <p>
                 Get the best leader for your organisation with YES' executive search services. YES provides comprehensive executive search services, bringing the right leaders to your organisation and making sure each one fits perfectly with its culture. Our expert team leverages their knowledgeable skill-set to identify and deliver candidates who match organisational culture, promising a positive leadership outcome that will take you into a brighter tomorrow!
                 </p>
-                <a href="" name='learn-more-link'>-Learn More</a>
+                <a href="https://bright-centaur-bb0f69.netlify.app/" name='learn-more-link'>-Learn More</a>
             </Col>
            
         </Row>
@@ -206,14 +214,14 @@ const About = () =>{
                 <h1  className="about-headings">Career Coaching</h1>
                 <p>
                 Unlock your potential with YES and start down an exciting career path. Our highly-qualified team will equip you with essential tools such as resume building, interview practice and job searching strategies to help ensure that all of your hard work pays off.                </p>
-                <a>-Learn More</a>
+                <a href="https://bright-centaur-bb0f69.netlify.app/">-Learn More</a>
             </Col>
             <Col>
             <img src={image5} alt="people chatting on a table"/> 
             </Col>
         </Row>
     </Container>
-    <Container className="about-common-style">
+    <Container className="about-common-style about-white-back" fluid>
         <Row>
         <Col>
             <img src={image6} alt="people argueing"/> 
@@ -300,12 +308,14 @@ Here is a list of fields where we can provide additional training and developmen
         </Col>
         <Col>
             <h1  className="about-headings">What Sets Us Apart</h1>
-            <h5>We put the cherry on top!</h5>
+            <h2>We put the cherry on top!</h2>
             <img src={image8} alt='running on the steps'/>
         </Col>
     </Row>
     </Container>
-    <Footer />
+    
+       </div>
+       <Footer />
        </div>
     )
 }

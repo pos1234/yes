@@ -1,6 +1,7 @@
 import React from 'react'
 import {Row, Col, Button, Container} from 'react-bootstrap'
 import {Star,Business,ArrowRight} from '../Constants/icons'
+import {StyledUr,StyledUrContent} from './StyledUr'
 import Footer from './Footer'
 import Navigation from './Navigation'
 import image1 from '../images/image-1-11.avif'
@@ -22,7 +23,7 @@ const YourHr = (props)=>{
                     <img alt='icon-image' src={props.imageSrc} width={40}/>
                 </Col>
                 <Col xm={6} className='home-hr-texts'>
-                    <h5>{props.title}</h5>
+                    <h2>{props.title}</h2>
                     <p>{props.content}</p>
                     <Button role='link' aria-label='your HR is good' className='list-button' as='a' name='button-down-home' href={props.href}><ArrowRight/></Button>
                 </Col>
@@ -36,7 +37,7 @@ const HowHelp = (props)=>{
                 <img src={props.imageSrc} alt='how-we-help-image' width={35}/>
             </Col>
             <Col xs={11} >
-                <h5>{props.title}</h5>
+                <h2>{props.title}</h2>
                 <p className='silver-paragraph'>{props.content}</p>
             </Col>
         </Row>
@@ -46,22 +47,25 @@ const Seeker = (props)=>{
     return (
         <Col className='home-seeker-lists'>
             <img src={props.imageSrc} alt='home-seeker-image' width={80}/>
-            <h3>{props.title}</h3>
+            <h2>{props.title}</h2>
             <p>{props.content}</p>
             <Button role='link' aria-label='links' className='list-button' as='a' href={props.href} name='link-button' ><ArrowRight/></Button>
         </Col>
     )
 }
+
 const Home = ()=>{
     return(
-        <>
+            <>
             <div className='home-container'>
                 {/* Home entry */}
                 <div className='home-entry'>
                     <div className='home-entry-content'>
                      <Navigation/>
                         <Row className='home-entry-headings'>
-                            <h1 className='display-1 styled-ur'>Right <span className='underlined underline-clip'>fit!</span></h1>
+                            <h1 className='display-1 '>Right &nbsp;
+                                <StyledUr text='fit!' />
+                            </h1>
                             <h1 className='right-now'><span></span></h1>
                             <Row className='home-button-container'>
                                 <Col><Button as='a' className='home-entry-button'>Find Talent <span  className='button-icons'><Star/></span></Button></Col>
@@ -73,7 +77,7 @@ const Home = ()=>{
                 {/* home bridge */}
                 <Container className='home-bridge'>
                      <Row>
-                        <h1>We <span className='underlined underline-clip'>bridge</span> the gap</h1>
+                        <h1>We  <StyledUrContent texts='bridge'/> the gap</h1>
                     </Row>
                     <Row>
                         <Col>
@@ -83,9 +87,9 @@ const Home = ()=>{
                     </Row>
                     <Row className='home-bridge-box-container'>
                         <Col>
-                            <div class="scene">
-                                <div class="card">
-                                    <div class="face front">
+                            <div className="scene">
+                                <div className="card">
+                                    <div className="face front">
                                         <Button className='bridge-button'>Employers</Button>
                                         <h2>Find Talent</h2>
                                     </div>
@@ -96,13 +100,13 @@ const Home = ()=>{
                             </div>
                         </Col>
                         <Col>
-                        <div class="scene">
-                                <div class="card">
-                                    <div class="face front second-front">
+                        <div className="scene">
+                                <div className="card">
+                                    <div className="face front second-front">
                                         <Button className='bridge-button'>Job Seekers</Button>
                                         <h2>Find a Job</h2>
                                     </div>
-                                    <div class="face back">
+                                    <div className="face back">
                                     <Button className='bridge-button'>Browse Jobs</Button>
                                     </div>
                                 </div>
@@ -115,7 +119,7 @@ const Home = ()=>{
                     <Row>
                         <Col className='home-your-hr-content' >
                             <Button as='a' className='home-your-hr-button' href='' name='employers-button-link'>EMPLOYERS</Button>
-                            <h1>Your HR <span className='underlined underline-clip'>one-stop-shop</span></h1>
+                            <h1>Your HR <StyledUrContent texts='one-stop-shop'/></h1>
                             <p className='home-hr-p silver-paragraph'>Need the perfect addition to your team? Search no more! YES has got you covered - with just a few clicks, we connect employers and employees together like peanut butter & jelly. So why wait? Get tapping today – it's time for greatness!</p>
                             <div className='home-your-hr-content-lists'>
                             <YourHr imageSrc={icon_image1}
@@ -154,13 +158,13 @@ const Home = ()=>{
                     <Row className='how-help-boxes-container'>
                         <Col>
                             <HowHelp imageSrc={icon_image4} 
-                             title='Recruitment & staffing'
+                             title='RECRUITMENT & STAFFING'
                              content='YES delivers full-cycle recruitment services to find the right talent for your open roles. Our innovative approaches focus on matching you with top talent in a wide range of industries. With YES’s expert services at your fingertips – hiring just got easier!'
                             />    
                         </Col>
                         <Col>
                         <HowHelp imageSrc={icon_image5} 
-                             title='Executive search'
+                             title='EXECUTIVE SEARCH'
                              content='Behind every successful business is a great leader. YES’ Executive Search will empower your organization by finding leaders of tomorrow today that will drive sustainable growth. With our deep and connected network, knowledge, and proven experience, we will find a leader who fits the business needs'
                             />  
                         </Col>
@@ -168,13 +172,13 @@ const Home = ()=>{
                     <Row className='how-help-boxes-container'>
                         <Col>
                             <HowHelp imageSrc={icon_image6}
-                             title='outsourcing '
+                             title='OUTSOURCING'
                              content='Focus on your core business and outsource some or all HR functions. YES will be your HR partner and function as an extension of your HR staff. We can handle hiring, engagement, employee issues, payroll, benefits, compensation, talent, compliance and more.'
                              />    
                         </Col>
                         <Col>
                         <HowHelp imageSrc={icon_image7}
-                             title='Training and Onboarding'
+                             title='TRAINING AND ONBOARDING'
                              content='In addition to training on vital skills that are necessary in today’s job market, we also work together with clients to facilitate the onboarding process for new hires. Our training and onboarding processes are designed to create smooth and efficient experience for both job seekers and employers.'
                             />  
                         </Col>
@@ -191,7 +195,7 @@ const Home = ()=>{
                     <div className='home-seekers-center'>
                     <Button as='a' className='home-seekers-button' href=''>JOB SEEKERS</Button>
                     <Row>
-                        <h1>Let the right job find you</h1>
+                        <h1>Let the <StyledUrContent texts='right job'/> find you</h1>
                     </Row>
                     <Row>
                         <Col>
@@ -232,6 +236,7 @@ const Home = ()=>{
                 </Container>
                 <Footer />
             </div>
+            
         </>
     )
 }

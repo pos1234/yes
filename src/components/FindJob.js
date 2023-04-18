@@ -2,6 +2,7 @@ import React from 'react'
 import logo from '../images/yes-logo.svg'
 import {Row, Dropdown, Col,Form, Navbar, Nav, Button, Container,Offcanvas} from 'react-bootstrap'
 import {Business,Location,Heart,Share} from '../Constants/icons'
+import { Helmet } from "react-helmet-async"
 const SearchResult = (props)=>{
     return (
         <Row className='search-result-container'>
@@ -33,6 +34,10 @@ class ClientHub extends React.Component {
          const expand='md';
       return (
         <>
+          <Helmet>
+                <title>Explore Job Vacancies in Ethiopia | YES Job Search</title>
+                <meta name="description" content="Find your dream job in Ethiopia with YES. Browse our extensive listings for fresh graduates, experienced professionals, skilled workers, UN jobs, NGO positions, and more"/>
+            </Helmet>
           <Navbar key={expand} bg="light" expand={expand}>
             <Container className='job-navigation' fluid>
               <Navbar.Brand href="#" ><img className='logo-navbar' src={logo} alt='yes-logo'/></Navbar.Brand>

@@ -1,6 +1,9 @@
 import React from "react"
 import 'bootstrap/dist/css/bootstrap.min.css'
 import {Container,Row,Col} from 'react-bootstrap'
+import LocationOnIcon from '@mui/icons-material/LocationOn';
+import CallIcon from '@mui/icons-material/Call';
+import EmailIcon from '@mui/icons-material/Email';
 import { Facebook,Twitter,Linked,Email,Location,Call } from "../Constants/icons"
 const Footer = () =>{
     return(
@@ -11,15 +14,15 @@ const Footer = () =>{
             <Row className="footer-contact" >
                               <Col >
                     <h1>Get <span className='underlined underline-clip'>in</span> touch</h1>
-                    <p><span className="footer-contact-icons"><Location /></span>Suite 301E | Bethlehem Plaza, Megenagna, Addis Ababa, Ethiopia</p>
-                    <p><span className="footer-contact-icons"><Call/></span> +2519 42 07 07 07 | +2511 16 67 47 67</p>
-                    <p><span className="footer-contact-icons"><Email/></span> info@yes.et | jobs@yes.et | employ@yes.et |</p>
+                    <p><span className="footer-contact-icons"><LocationOnIcon sx={{fontSize:30}} /></span>Suite 301E | Bethlehem Plaza, Megenagna, Addis Ababa, Ethiopia</p>
+                    <p><span className="footer-contact-icons"><CallIcon  sx={{fontSize:30}} /></span> +2519 42 07 07 07 | +2511 16 67 47 67</p>
+                    <p><span className="footer-contact-icons"><EmailIcon  sx={{fontSize:30}} /></span> info@yes.et | employ@yes.et | apply@yes.et</p>
                 </Col>
                 <Col>
                     <Row className="footer-contact-yes" xs="auto">
                         <Row>
                         <Col className="footer-contact-yes-col">
-                            <h3 className="footer-contact-h3">For Employers</h3>
+                            <h2 className="footer-contact-h3">For Employers</h2>
                             <p>Find a Job</p>
                             <p>Build Resume</p>
                             <p>Upload Resume</p>
