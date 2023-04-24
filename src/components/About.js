@@ -1,6 +1,10 @@
-import React from "react"
+import React ,{useEffect}from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import {Container,Row,Col,Button} from 'react-bootstrap'
+import {StyledUr,StyledUrContent} from './StyledUr'
+import { Link } from 'react-router-dom'
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import Footer from './Footer'
 import Navigation from './Navigation'
 import ToggledContent from "./ToggledContent"
@@ -18,8 +22,8 @@ import icon_image3 from '../images/icon-image-3.avif'
 import icon_image4 from '../images/icon-image-4.avif'
 import icon_image5 from '../images/icon-image-5.avif'
 import icon_image6 from '../images/icon-image-6.avif'
-import icon_image7 from '../images/icon-image-17.avif'
-import icon_image8 from '../images/icon-image-18.avif'
+import icon_image7 from '../images/jet-svg.svg'
+import icon_image8 from '../images/micro-svg.svg'
 import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
 import { Helmet } from "react-helmet-async"
 const Boxes = (props)=>{
@@ -32,6 +36,9 @@ const Boxes = (props)=>{
 }
 
 const About = () =>{
+    useEffect(() => {
+        AOS.init({once: true});
+      }, [])
     return(
         <div>
             <Helmet>
@@ -43,21 +50,22 @@ const About = () =>{
        <div className='about-entry'>
                     <div className='about-entry-content'>
                      <Navigation/>
-                        <Row className='about-entry-headings'>
-                            <h1 className='display-1 styled-ur'>Your one-stop-shop for employment solutions in Ethiopia!</h1>
+                        <Row className='about-entry-headings' >
+                            <h1 className='display-1 styled-ur'>Your one-stop-shop for employment solutions in <StyledUr text='Ethiopia!' /></h1>
                             <Row className='about-icon-container'>
-                                <Col><span className="about-entry-icon"><h1>
+                                <Col><a href='#about-deliver'>
                                     <ArrowDownwardIcon sx={{ fontSize: 50}}/>
-                                </h1></span></Col>
+                                </a></Col>
                             </Row>
                         </Row> 
                     </div>
                 </div>
        <Container>
-        <Container className="about-deliver">
-            <Row className="about-deliver-content">
+        
+        <Container className="about-deliver" id='about-deliver' >
+            <Row className="about-deliver-content" data-aos="fade-up" data-aos-duration="2000">
                 <Col>
-                <Button as='a' className='about-deliver-button' name="about-deliver-link-button" href=''>EMPLOYERS</Button>
+                <Button className='about-deliver-button' name="about-deliver-link-button" href=''>ABOUT US</Button>
                 <h1 className="about-headings">Delivering YES Moments</h1>
                 <h2>Bridging the Gap Between Employers & Job Seekers For High-Impact Business Outcomes</h2>
                 <p>YES | Your Employment Solutions is a robust and knowledgeable HR services company in Ethiopia specializing in employee recruitment, outsourcing, payroll management, and training.</p>
@@ -65,8 +73,8 @@ const About = () =>{
                 <p>Since 2015, YES has provided local and international clients with the right people to fill their most needed professional roles at the right time. We can help you have that YES moment, too!</p>
                 </Col>
             </Row>
-            <Row className='about-deliver-boxes'>
-                <Col sm={1}>
+            <Row className='about-deliver-boxes' data-aos="fade-up" data-aos-duration="2000">
+                <Col sm={1} >
                     <img src={icon_image7} alt="mission-icon"/>
                 </Col>
                 <Col className="about-deliver-boxes-content">
@@ -74,7 +82,7 @@ const About = () =>{
                     <p className="silver-paragraph">Our mission is to bridge the gap between organisations and people who will shape our future communities with excellence, integrity and respect at its core. That's why we take pride in professionally managing HR tasks so businesses can focus on what matters most: growth. Through well-designed, efficient, and positive experiences, we deliver meaningful career opportunities to the future workforce, giving back to the community in which we work, live and play. </p>
                 </Col>
             </Row>
-            <Row className='about-deliver-boxes'>
+            <Row className='about-deliver-boxes' data-aos="fade-up" data-aos-duration="2000">
                 <Col sm={1}>
                     <img src={icon_image8} alt="vision-icon"/>
                 </Col>
@@ -85,7 +93,7 @@ const About = () =>{
             </Row>
         </Container>
         <Container className="about-values">
-            <Row >
+            <Row data-aos="fade-up" data-aos-duration="2000">
             <Col>
                 <h1  className="about-headings" >Values Are At Our Core</h1>
                 <p className="sub-heading">Excellence. Intergrity. Respect.</p>
@@ -108,7 +116,7 @@ const About = () =>{
     </Container>
     </Container>
     <Container className="about-services">
-        <Row>
+        <Row data-aos="fade-up" data-aos-duration="2000">
             <Col>
             <Button as='a' className='about-deliver-button' href='' name="about-deliver-button-link">Services</Button>
                 <h1  className="about-headings">YES, We Do That.</h1>
@@ -116,7 +124,7 @@ const About = () =>{
                 <p>By bridging the gap between employers and job seekers, we are filling a need for businesses in Ethiopia. You are much too busy growing to be bogged down with HR tasks. So, we are here to assist you with that in any way we can.</p>    
             </Col>
         </Row>
-        <Row className="Boxe-container">
+        <Row className="Boxe-container" data-aos="fade-up" data-aos-duration="2000">
             <Row>
             <Boxes title='Recruitment & Staffing'
             imageSrc={icon_image1}/>
@@ -135,10 +143,11 @@ const About = () =>{
             </Row>
         </Row>
     </Container>
-    <Container className="about-common-style">
-        <Row>
+    <Container className="about-common-style" id="section">
+        <Row data-aos="fade-up" data-aos-duration="2000">
             <Col sm={6} className="about-common-style-left">
-                <h1  className="about-headings">Recruitment & Staffing</h1>
+                
+                <h1  className="about-headings">Recruitment & <StyledUrContent texts='Staffing' /></h1>
                 <p>
                 YES offers comprehensive staffing solutions designed to streamline the recruitment process and help you find your ideal candidate faster. Our innovative approaches focus on matching you with top talent in a wide range of industries such as manufacturing, engineering, HR management, sales & marketing etc., With YES’s expert services at your fingertips – hiring just got easier! During the recruitment process, we provide:
                 </p>
@@ -159,7 +168,7 @@ const About = () =>{
                             </ul>
                     </Col>
                 </Row>
-                <a href="https://bright-centaur-bb0f69.netlify.app/" name='learn-more-link'>-Learn More</a>
+                <Link to={'/home/contact-us'} className='learn-more-link'>-- Learn More</Link>
             </Col>
             <Col>
             <img src={image2} alt="people discussing"/> 
@@ -168,12 +177,12 @@ const About = () =>{
     </Container>
     <Container className="about-common-style">
         
-        <Row>
+        <Row data-aos="fade-up" data-aos-duration="2000">
             <Col>
                 <img src={image3} alt="people discussing on a table"/> 
             </Col>
             <Col sm={6} className="about-common-style-right">
-                <h1  className="about-headings">HR Outsourcing | Payroll Management</h1>
+                <h1  className="about-headings"><StyledUrContent texts='HR Outsourcing' /> | Payroll Management</h1>
                 <p>
                     YES is the ultimate solution for all your Ethiopian expansion and HR project needs - our reliable HR Outsourcing and Payroll Management services ensure you are in full compliance with employment regulations while minimising distractions from growing your business. Our comprehensive suite of offerings includes tailored employment contracts, payroll and benefits management based on the Ethiopian labour law, robust HRIS systems aligned to local statutory requirements and international standards giving you peace of mind along with a first class employee experience!
                 </p>
@@ -188,33 +197,33 @@ const About = () =>{
                         </ul>
                     </Col>
                 </Row>
-                <a href="https://bright-centaur-bb0f69.netlify.app/" name='learn-more-link-text'>-Learn More</a>
+                <Link to={'/home/contact-us'} className='learn-more-link'>-- Learn More</Link>
             </Col>
            
         </Row>
     </Container>
     <Container className="about-common-style">
-        <Row>
+        <Row data-aos="fade-up" data-aos-duration="2000">
         <Col>
             <img src={image4} alt="people chatting"/> 
             </Col>
             <Col sm={6} className="about-common-style-right">
-                <h1  className="about-headings">Executive Search</h1>
+                <h1  className="about-headings"><StyledUrContent texts='Executive' /> Search</h1>
                 <p>
                 Get the best leader for your organisation with YES' executive search services. YES provides comprehensive executive search services, bringing the right leaders to your organisation and making sure each one fits perfectly with its culture. Our expert team leverages their knowledgeable skill-set to identify and deliver candidates who match organisational culture, promising a positive leadership outcome that will take you into a brighter tomorrow!
                 </p>
-                <a href="https://bright-centaur-bb0f69.netlify.app/" name='learn-more-link'>-Learn More</a>
+                <Link to={'/home/contact-us'} className='learn-more-link'>-- Learn More</Link>
             </Col>
            
         </Row>
     </Container>
     <Container className="about-common-style">
-        <Row>
+        <Row data-aos="fade-up" data-aos-duration="2000">
             <Col sm={6} className="about-common-style-left">
-                <h1  className="about-headings">Career Coaching</h1>
+                <h1  className="about-headings"><StyledUrContent texts='Career' /> Coaching</h1>
                 <p>
                 Unlock your potential with YES and start down an exciting career path. Our highly-qualified team will equip you with essential tools such as resume building, interview practice and job searching strategies to help ensure that all of your hard work pays off.                </p>
-                <a href="https://bright-centaur-bb0f69.netlify.app/">-Learn More</a>
+                <Link to={'/home/contact-us'} className='learn-more-link'>-- Learn More</Link>
             </Col>
             <Col>
             <img src={image5} alt="people chatting on a table"/> 
@@ -222,12 +231,12 @@ const About = () =>{
         </Row>
     </Container>
     <Container className="about-common-style about-white-back" fluid>
-        <Row>
+        <Row data-aos="fade-up" data-aos-duration="2000">
         <Col>
             <img src={image6} alt="people argueing"/> 
             </Col>
             <Col sm={6} className="about-common-style-right">
-                <h1  className="about-headings">Assessment and Background Check</h1>
+                <h1  className="about-headings"><StyledUrContent texts='Assessment' />  and Background Check</h1>
                 <p>
                 Let’s make sure your new hire checks all of the boxes. With our pre-employment tests and background tests, we’ll ensure your candidate is a qualified YES match giving employers peace of mind when making new hires. Some of our assessment and background check options include:
                 </p>
@@ -252,18 +261,18 @@ const About = () =>{
                         </ul>
                     </Col>
                 </Row>
-                <a href="" name='learn-more-link-middle'>-Learn More</a>
+                <Link to={'/home/contact-us'} className='learn-more-link'>-- Learn More</Link>
             </Col>
-          
         </Row>
     </Container>
+    
     <Container className="about-common-style">
-        <Row>
+        <Row data-aos="fade-up" data-aos-duration="2000">
             <Col sm={6} className="about-common-style-left">
-                <h1  className="about-headings">Training and Development</h1>
+                <h1  className="about-headings"><StyledUrContent texts='Training' />  and Development</h1>
                 <p>
                 Finding the right fit is only the beginning. Investing in the growth and development of your team's core skills and competencies will elevate their performance to a whole new level. Our comprehensive training and development programs are designed to help your employees reach their future goals. With an array of short & long course programs to choose from, we provide practical tools and resources that professionals can use to not only ensure productivity at work but innovation as well. What makes us unique is our hands-on approach that bases all programs on actual gaps and needs observed during our analysis period. This enables us to deliver tailor made development programs that are client centric and bring long lasting change.
-Here is a list of fields where we can provide additional training and development opportunities.                </p>
+                Here is a list of fields where we can provide additional training and development opportunities.                </p>
                 <Row>
                     <Col>
                         <ul>
@@ -283,7 +292,7 @@ Here is a list of fields where we can provide additional training and developmen
                         </ul>
                     </Col>
                 </Row>
-                <a href="" name='learn-more-link-point'>-Learn More</a>
+                <Link to={'/home/contact-us'} className='learn-more-link'>-- Learn More</Link>
             </Col>
             <Col>
             <img src={image7} href="" alt='developer discussing'/> 
@@ -291,8 +300,7 @@ Here is a list of fields where we can provide additional training and developmen
         </Row>
     </Container>
     <Container className="about-common-style about-last-content">
-        <Row >
-        
+        <Row data-aos="fade-up" data-aos-duration="2000">
         <Col className='Toggle-collection'>
             <Row>
                 <ToggledContent btnText='We Get it Right'

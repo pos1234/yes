@@ -1,19 +1,22 @@
 import React from "react"
 import 'bootstrap/dist/css/bootstrap.min.css'
 import {Container,Row,Col} from 'react-bootstrap'
+import { Link } from "react-router-dom";
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import CallIcon from '@mui/icons-material/Call';
 import EmailIcon from '@mui/icons-material/Email';
+import { StyledUrContent } from "./StyledUr";
 import { Facebook,Twitter,Linked,Email,Location,Call } from "../Constants/icons"
 const Footer = () =>{
     return(
         <div>
+            
             <Container className="footer-container" fluid>
             <div className="footer-background-overlay"></div>
             <div className="footer-inner-content">
             <Row className="footer-contact" >
                               <Col >
-                    <h1>Get <span className='underlined underline-clip'>in</span> touch</h1>
+                    <h1> Get <StyledUrContent texts='in'/> touch</h1>
                     <p><span className="footer-contact-icons"><LocationOnIcon sx={{fontSize:30}} /></span>Suite 301E | Bethlehem Plaza, Megenagna, Addis Ababa, Ethiopia</p>
                     <p><span className="footer-contact-icons"><CallIcon  sx={{fontSize:30}} /></span> +2519 42 07 07 07 | +2511 16 67 47 67</p>
                     <p><span className="footer-contact-icons"><EmailIcon  sx={{fontSize:30}} /></span> info@yes.et | employ@yes.et | apply@yes.et</p>
@@ -38,10 +41,10 @@ const Footer = () =>{
                         </Row>
                         <Col>
                         <ul>
-                            <li><Facebook/></li>
-                            <li><Twitter/></li>
-                            <li><Linked/></li>
-                            <li><Email/></li>
+                            <li><a href='https://www.facebook.com/youremploymentsolutionsethiopia/' target='_blank'><Facebook/></a></li>
+                            <li><a href='https://twitter.com/yesethiopia' target='_blank'><Twitter/></a></li>
+                            <li><a href='https://www.linkedin.com/uas/login?session_redirect=%2Fcompany%2F10353818%3Ftrk%3Dprof-exp-company-name' target='_blank'><Linked/></a></li>
+                            <li><a href='mailto:info@yes.et'><Email/></a></li>
                         </ul>
                         </Col>
                     </Row>
